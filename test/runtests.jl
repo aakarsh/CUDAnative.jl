@@ -10,6 +10,13 @@ include("base.jl")
 
 include("codegen.jl")
 
+# a composite type to test for more complex element types
+immutable RGB{T}
+    r::T
+    g::T
+    b::T
+end
+
 # NOTE: based on test/pkg.jl::capture_stdout, but doesn't discard exceptions
 macro grab_output(ex)
     quote
